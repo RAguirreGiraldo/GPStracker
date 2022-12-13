@@ -13,41 +13,64 @@
     --app-darkinput: #0f1014;
 }
 
-.container {
-  width: min(100% - 30px, 1080px);
-  margin-inline: auto;
+main {
+  min-width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
-body {
-  background: var(--app-dark-bg);
+.map {
+  width: 100%;
+  height: 100%;
+  background-color: var(--app-dark-bg);
 }
 
-h1 {
-  color: var(--app-orange);  
-  font-family: 'Bad Script', cursive;
-  font-size: 70px;
+.overlay {
+  position: fixed;
+  top:0;
+  left: 0;
+  min-width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: var(--app-dark-bg);
+  display: grid;
+  place-items:center;
+  z-index:5555;
+}
+
+.overlay .loading {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgb(255 255 255 / 0.8);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  z-index:9999;
+  animation: 1.3s linear infinite rotate;
+}
+
+.overlay .loading {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgb(255 255 255 / 0.8);
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  z-index:9999;
+  animation: 1.3s linear infinite rotate;
+}
+
+@keyframes rotate {
+  from {
+    rotate: z 0deg;
+  } to {
+   rotate: z 360deg;
+ }
+}
+
+.mapboxgl-ctrl-bottom-left,
+.mapboxgl-ctrl-bottom-right {
+  display: none !important;
 }
 
 
-h2, h3, p {
-  color: var(--app-light-bg);  
-}
 
-.imagen {
- width: 100%;
- height: 200px;
-}
 
-.containermap{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 30px;
-}
-
-#map {
-  width: 600px;
-  height: 500px;
-  margin-left: 25 px;
-}
 
